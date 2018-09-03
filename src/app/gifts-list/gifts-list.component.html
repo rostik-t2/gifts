@@ -1,10 +1,9 @@
 <div class="gifts-container">
   <div *ngFor="let item of items | async" class="gift" [class.gift-booked]="item.bookedBy" [class.gift-booked-by-me]="item.bookedBy === user.email">
-    <div>{{ item.name }}</div>
+    <div class="gift__name">{{ item.name }}</div>
     <img src="{{item.downloadUrl}}" width="450px" height="450px">
-    <div>{{ item.price }}</div>
-    <div>{{ item.description }}</div>
-    <div>{{ item.bookedBy }}</div>
+    <div class="gift__description"><span style="font-weight: 600">Описание:</span> {{ item.description }}</div>
+    <div class="gift__price"><span style="font-weight: 600">Стоимость:</span> {{ item.price }}</div>
     <button *ngIf='!item.bookedBy' (click)="bookItem(item)">Забронировать</button>
     <button *ngIf='item.bookedBy === user.email' (click)="cancelBook(item)">Отменить бронь</button>
     <div class="booked-tick">

@@ -1,3 +1,5 @@
+@import url(http://allfont.ru/allfont.css?fonts=droid-sans);
+
 .gifts-container {
   display: flex;
   flex-direction: row-reverse;
@@ -10,10 +12,26 @@
 .gift {
   width: 30%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px dashed aliceblue;
-  border-radius: 3px;
+  margin: 15px;
+  border: 1px dashed aquamarine;
+  border-radius: 15px;
   position: relative;
+  transition-duration: 0.4s;
+}
+.gift__name {
+  font-family: 'Droid Sans', arial, serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+.gift__description {
+  font-family: 'Droid Sans', arial, serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.gift__price {
+  font-family: 'Droid Sans', arial, serif;
+  font-size: 16px;
+  margin-bottom: 8px;
 }
 
 .gift-booked:before {
@@ -26,8 +44,10 @@
   opacity: 0.7;
   font-size: 40px;
   color: blue;
-  background-color: white;
+  background-color: beige;
   position: absolute;
+  transition-duration: 0.4s;
+  border-radius: 15px;
 }
 .gift-booked:after {
   content: "Забронировано";
@@ -49,4 +69,17 @@
 }
 .booked-tick {
   display: none;
+}
+
+button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+button {
+  border-radius: 6px;
+  color: #0099CC;
+  background: transparent;
+  border: 2px solid #0099CC;
+  transition-duration: 0.4s;
+  width: 450px;
 }
