@@ -1,0 +1,24 @@
+<form [formGroup]="uploadForm">
+  <div>
+    Название
+    <input type="text" formControlName="name">
+  </div>
+
+  <div>
+    Описание:
+    <input type="text" formControlName="description">
+  </div>
+
+  <div>
+    Цена:
+    <input type="text" formControlName="price">
+  </div>
+
+  <div>
+    Картинка:
+    <input type="file" formControlName="file" (change)="onChooseFile($event)">
+  </div>
+
+</form>
+<button (click)="saveGift()">Загрузить</button>
+<span *ngIf="preloader">Идет загрузка... </span>

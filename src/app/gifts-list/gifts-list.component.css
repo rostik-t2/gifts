@@ -1,0 +1,52 @@
+.gifts-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.gift {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px dashed aliceblue;
+  border-radius: 3px;
+  position: relative;
+}
+
+.gift-booked:before {
+  content: "";
+  top: 0;
+  bottom: 31px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0.7;
+  font-size: 40px;
+  color: blue;
+  background-color: white;
+  position: absolute;
+}
+.gift-booked:after {
+  content: "Забронировано";
+  position: absolute;
+  top: 200px;
+  font-size: 30px;
+
+  left: 33%;
+  color: blue;
+}
+.gift-booked-by-me:after {
+  content: "";
+}
+.gift-booked-by-me .booked-tick {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+.booked-tick {
+  display: none;
+}

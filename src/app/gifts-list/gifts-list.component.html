@@ -1,0 +1,15 @@
+<div class="gifts-container">
+  <div *ngFor="let item of items | async" class="gift" [class.gift-booked]="item.bookedBy" [class.gift-booked-by-me]="item.bookedBy === user.email">
+    <div>{{ item.name }}</div>
+    <img src="{{item.downloadUrl}}" width="450px" height="450px">
+    <div>{{ item.price }}</div>
+    <div>{{ item.description }}</div>
+    <div>{{ item.bookedBy }}</div>
+    <button *ngIf='!item.bookedBy' (click)="bookItem(item)">Забронировать</button>
+    <button *ngIf='item.bookedBy === user.email' (click)="cancelBook(item)">Отменить бронь</button>
+    <div class="booked-tick">
+      <img src="https://firebasestorage.googleapis.com/v0/b/baby-gifts.appspot.com/o/kisspng-line-triangle-point-area-green-tick-png-picture-5a756f7983e689.6751696415176456895403.png?alt=media&amp;token=a2e822eb-66d1-4ecb-b386-c1532fdfcc31" width="300px" height="300px">
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div *ngIf="angularFireAuth.user | async as user; else showLogin">
+  <div *ngIf="user.displayName">Добро пожаловать, {{user.displayName}}</div>
+  <div *ngIf="!user.displayName">Как к вам обращаться?
+  <div>
+    Введите имя
+    <input type="text" [formControl]="displayName" novalidate>
+    <button (click)="setDisplayName(user, displayName.value)">Продолжить</button>
+  </div>
+  </div>
+
+</div>
+<ng-template #showLogin>
+  <p>Введите email и пароль для продолжения.</p>
+  <form [formGroup]="authForm">
+    <label>
+      Email:
+      <input type="email" formControlName="email">
+    </label>
+
+    <label>
+      Пароль:
+      <input type="password" formControlName="password">
+    </label>
+
+  </form>
+  <button (click)="login()">Продолжить</button>
+  <div>{{errorMessage}}</div>
+</ng-template>
