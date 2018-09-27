@@ -1,24 +1,21 @@
-<form [formGroup]="uploadForm">
+<form class="p-5 center-form" [formGroup]="uploadForm">
   <div>
-    Название
-    <input type="text" formControlName="name">
+    <input type="text" class="form-control mb-4" formControlName="name" placeholder="Название">
   </div>
 
   <div>
-    Описание:
-    <input type="text" formControlName="description">
+    <input type="text" class="form-control mb-4" formControlName="description" placeholder="Описание">
   </div>
 
   <div>
-    Цена:
-    <input type="text" formControlName="price">
+    <input type="text" class="form-control mb-4" formControlName="price" placeholder="Цена">
   </div>
 
-  <div>
-    Картинка:
-    <input type="file" formControlName="file" (change)="onChooseFile($event)">
+  <div class="custom-file">
+    <input type="file" formControlName="file" (change)="onChooseFile($event)" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile01">Выберите изображение</label>
   </div>
+  <button class="btn btn-info btn-block my-4" (click)="saveGift()">Загрузить</button>
 
 </form>
-<button (click)="saveGift()">Загрузить</button>
 <span *ngIf="preloader">Идет загрузка... </span>

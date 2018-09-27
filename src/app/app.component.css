@@ -1,16 +1,11 @@
-.main {
-  position: relative;
-  text-align: center;
+.logout {
+    margin: 8px;
+    border-bottom: 1px dashed #000;
+    text-decoration: none;
+    width: fit-content;
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
 }
-.main:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("/assets/background.jpg");
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  z-index: -1;
-}
+
+

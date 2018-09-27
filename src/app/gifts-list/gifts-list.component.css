@@ -1,12 +1,13 @@
-@import url(http://allfont.ru/allfont.css?fonts=droid-sans);
+
 
 .gifts-container {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1600px;
+  width: 100%;
   margin: 0 auto;
+  transition-duration: 0.4s;
 }
 
 .gift {
@@ -17,12 +18,20 @@
   border-radius: 15px;
   position: relative;
   transition-duration: 0.4s;
+  padding-bottom: 40px;
 }
+
 .gift__name {
   font-family: 'Droid Sans', arial, serif;
   font-size: 30px;
   margin-bottom: 15px;
 }
+.gifts__image {
+  width: 100%;
+  height: auto;
+
+}
+
 .gift__description {
   font-family: 'Droid Sans', arial, serif;
   font-size: 16px;
@@ -48,27 +57,34 @@
   position: absolute;
   transition-duration: 0.4s;
   border-radius: 15px;
+  height: 100%;
 }
 .gift-booked:after {
-  content: "Забронировано";
+  content: "ЗАБРОНИРОВАНО";
+  font-family: 'AGBengaly', arial;
   position: absolute;
-  top: 200px;
   font-size: 30px;
-
-  left: 33%;
-  color: blue;
+    left: 0;
+    right: 0;
+    top: 40%;
+  color: red;
+  transition-duration: 0.4s;
 }
 .gift-booked-by-me:after {
   content: "";
+    transition-duration: 0.4s;
 }
 .gift-booked-by-me .booked-tick {
   display: block;
   position: absolute;
-  left: 100px;
-  top: 100px;
+   left: 0;
+   right: 0;
+   top: 15%;
+     transition-duration: 0.4s;
 }
 .booked-tick {
   display: none;
+  transition-duration: 0.4s;
 }
 
 button:hover {
@@ -81,5 +97,37 @@ button {
   background: transparent;
   border: 2px solid #0099CC;
   transition-duration: 0.4s;
-  width: 450px;
+  width: 95%;
+      bottom: 0px;
+      position: absolute;
+      left: 0;
+      margin: 10px;
+      right: 10px;
+}
+.list-header {
+  font-family: 'AGBengaly', arial;
+}
+@media only screen and (max-width: 1400px) {
+.gifts-container {
+  width: 100%;
+  }
+.gift {
+  width: 40%;
+  }
+.gifts__image {
+  width: 100%;
+  height: auto
+  }
+}
+@media only screen and (max-width: 890px) {
+.gifts-container {
+  width: 100%;
+  }
+.gift {
+  width: 100%;
+  }
+.gifts__image {
+  width: 100%;
+  height: auto
+  }
 }

@@ -1,28 +1,43 @@
+<h1>
+  <br>
+  Привет! Мы - Ростислав и Юлиана, и вы пришли по адресу!
+</h1>
 <div *ngIf="angularFireAuth.user | async as user; else showLogin">
-  <div *ngIf="user.displayName">Добро пожаловать, {{user.displayName}}</div>
-  <div *ngIf="!user.displayName">Как к вам обращаться?
-  <div>
-    Введите имя
-    <input type="text" [formControl]="displayName" novalidate>
-    <button (click)="setDisplayName(user, displayName.value)">Продолжить</button>
-  </div>
-  </div>
+  <div class="p-5 welcome-text" *ngIf="!user.displayName">
+  <div>Добро пожаловать!</div>
+  <div>Как вы знаете, мы ждем малыша! Точнее, очаровательную и любимую малышку.</div>
+    <div>А как мы знаем, вы очень хотите сделать свой первый подарок нашей малышке.</div>
+    <br>
+    <div>Мы очень ценим и поддерживаем ваше желание, правда :)</div>
+    <br>
+    <div>Но чтобы подарок был самый полезный и самый ценный, мы решили вам помочь и подготовили список того, что нужно нашей дочке в нашем человеческом мире.
+      Пожалуйста, не стесняйтесь и выбирайте то, что вам больше понравится.
+    </div>
+  <div *ngIf="!user.displayName" class="p-5 center-form">
+    <p class="h4 mb-4">Для начала, скажите, как к вам обращаться?</p>
+    <input type="text" [formControl]="displayName" novalidate class="form-control mb-4" placeholder="Введите имя">
 
+    <button (click)="setDisplayName(user, displayName.value)" class="btn btn-info btn-block my-4" type="submit">Продолжить</button>
+  </div>
+  </div>
 </div>
 <ng-template #showLogin>
-  <p>Введите email и пароль для продолжения.</p>
-  <form [formGroup]="authForm">
-    <label>
-      Email:
-      <input type="email" formControlName="email">
-    </label>
 
-    <label>
-      Пароль:
-      <input type="password" formControlName="password">
-    </label>
+  <!-- Default form login -->
+  <form [formGroup]="authForm" class="text-center p-5 center-form">
+
+    <p class="h4 mb-4">Введите email и пароль для продолжения</p>
+
+    <!-- Email -->
+    <input type="email" formControlName="email" class="form-control mb-4" placeholder="E-mail">
+
+    <!-- Password -->
+    <input type="password" formControlName="password" class="form-control mb-4" placeholder="Пароль">
+
+    <!-- Sign in button -->
+    <button (click)="login()" class="btn btn-info btn-block my-4" type="submit">Продолжить</button>
 
   </form>
-  <button (click)="login()">Продолжить</button>
+
   <div>{{errorMessage}}</div>
 </ng-template>

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'kpi-auth',
   templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
   public errorMessage: string = '';
